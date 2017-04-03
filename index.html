@@ -54,16 +54,16 @@
 
       == <span class='keyword'>yield</span>
 
-      - <span class='keyword'>unless</span> items.empty?
+      - <span class='keyword'>if</span> items.empty?
+        <span class='tag'>p</span>
+         | No items found.  Please add some inventory.
+           Thank you!
+      - <span class='keyword'>else</span>
         <span class='tag'>table</span>
           - items.each <span class='keyword'>do</span> |<span class='tag'>item</span>|
             <span class='tag'>tr</span>
               <span class='tag'>td.name</span> = item.name
               <span class='tag'>td.price</span> = item.price
-      - <span class='keyword'>else</span>
-        <span class='tag'>p</span>
-         | No items found.  Please add some inventory.
-           Thank you!
 
     <span class='tag'>div</span> id=<span class='string'>"footer"</span>
       = <span class='keyword'>render</span> <span class='string'>'footer'</span>
